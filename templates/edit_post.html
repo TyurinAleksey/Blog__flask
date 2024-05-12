@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block body %}
+    <h1 class="title">Редактирование поста</h1>
+    <div class="container">
+        <form class="needs-validation id" action="{{ url_for('edit_post', post_id=post.id) }}" method="post">
+            <div class="left">
+                <img src="{{ post.image_url }}" alt="Изображение поста" class="post_id_img">
+            </div>
+            <div class="right">
+                <h5>Название поста</h5>
+                <input type="text" name="title" class="form-control" placeholder="Название поста" value="{{ post.title }}" required>
+                <h5>Описание поста</h5>
+                <input type="text" name="description" class="form-control" placeholder="Описание поста" value="{{ post.description }}" required>
+                <h5>Изображение поста</h5>
+                <input type="text" name="image_url" class="form-control" placeholder="Изображение поста" value="{{ post.image_url }}">
+                <input class="btn" type="submit" value="Сохранить изменения">
+            </div>
+        </form>
+    </div>
+{% endblock %}
